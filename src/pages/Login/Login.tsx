@@ -12,7 +12,7 @@ export const Login = () => {
           <input type="password" name='password' required placeholder='Senha' className={style.input} />
           <input type="submit" value="Entrar" className={`${style.inputSubmit}`} />
         </form>
-        <Link to="/register"><button>Registrar</button></Link>
+        <Link to="/registrar"><button>Registrar</button></Link>
       </div>
     </div>
   )
