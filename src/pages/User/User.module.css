@@ -125,7 +125,7 @@
         display: flex;
         justify-content: center;
 
-        & input[type="month"] {
+        & input[type="number"] {
           background-color: transparent;
           color: #000;
           padding: 5px;
@@ -135,9 +135,8 @@
           font-size: 18px;
         }
 
-        & input[type="month"]::-webkit-calendar-picker-indicator {
-          filter: invert(1);
-          /* Inverte a cor do ícone */
+        & input[type="number"]::placeholder {
+          color: rgba(0, 0, 0, 0.377);
         }
       }
 

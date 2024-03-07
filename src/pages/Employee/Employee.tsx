@@ -6,7 +6,7 @@ import { CiHome } from "react-icons/ci";
 import { CiEdit } from "react-icons/ci";
 import { CiImport } from "react-icons/ci";
 import { CiCirclePlus } from "react-icons/ci";
-
+import { UserList } from '../../components/UserList';
 
 export const Employee = () => {
   return (
@@ -25,7 +25,7 @@ export const Employee = () => {
         <div className={style.left}>
           <div className={style.menu}>
             <CiHome className={style.icon} />
-            <h1>Home</h1>
+            <h1>ínicio</h1>
           </div>
           <div className={`${style.menu} ${style.current}`}>
             <CiUser className={style.icon} />
@@ -39,15 +39,14 @@ export const Employee = () => {
               <CiImport className={style.icon} />
               <CiCirclePlus className={style.icon} />
             </div>
-            <input type="month" />
+            <input type="number" min="1900" max="2100" placeholder="Ano" />
             <input type="search" placeholder='Pesquise o nome' className={style.search} />
           </div>
           <div className={style.rightUpside}>
-            <div className={style.upSideInfo}>
-              <p>1</p>
-              <p>Fabio penedo</p>
-              <p>fabioteste@gmail.com</p>
-              <p>31 09050505</p>
+            <UserList />
+            <div className={style.previousAndNext}>
+              <button className={style.previous}>Anterior</button>
+              <button>Próximo</button>
             </div>
           </div>
         </div>

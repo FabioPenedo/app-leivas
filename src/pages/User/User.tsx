@@ -57,13 +57,13 @@ export const User = () => {
           <div className={style.rightOpen}>
             <div className={style.modal}>
               <div className={style.modalIcon}>
-                <CiSquareRemove 
-                className={style.icon} 
-                onClick={closeModal}
+                <CiSquareRemove
+                  className={style.icon}
+                  onClick={closeModal}
                 />
               </div>
               <div className={style.modalInput}>
-                <input type="month" />
+                <input type="number" min="1900" max="2100" placeholder="Ano" />
               </div>
               <div className={style.modalDatas}>
                 <div className={style.month}>
