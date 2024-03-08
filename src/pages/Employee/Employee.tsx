@@ -8,6 +8,7 @@ import { CiImport } from "react-icons/ci";
 import { CiCirclePlus } from "react-icons/ci";
 import { UserList } from '../../components/UserList';
 
+
 export const Employee = () => {
   return (
     <div className={style.container}>
@@ -44,10 +45,6 @@ export const Employee = () => {
           </div>
           <div className={style.rightUpside}>
             <UserList />
-            <div className={style.previousAndNext}>
-              <button className={style.previous}>Anterior</button>
-              <button>Próximo</button>
-            </div>
           </div>
         </div>
       </div>
