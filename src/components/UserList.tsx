@@ -1,8 +1,12 @@
-import { Usertest } from '../helpers/Usertest';
+import { User } from '../helpers/Usertest';
 import { useState } from 'react';
 import style from '../pages/Employee/Employee.module.css';
 
-export const UserList = () => {
+type Props = {
+  filteredResults: User[]
+}
+
+export const UserList = ({ filteredResults }: Props ) => {
   const [selectedKey, setSelectedKey] = useState<number | null>(null);
 
   const itensPerPage = 8
@@ -10,17 +14,16 @@ export const UserList = () => {
 
   const startIndex = currentPage * itensPerPage;
   const endIndex = startIndex + itensPerPage;
-  const currentItens = Usertest.slice(startIndex, endIndex)
+  const currentItens = filteredResults.slice(startIndex, endIndex)
 
   const pagination = {
     handleNext: () => {
-      if(endIndex < Usertest.length) setCurrentPage(currentPage + 1)
+      if(endIndex < filteredResults.length) setCurrentPage(currentPage + 1)
     },
     handlePrevious: () => {
       if(currentPage > 0) setCurrentPage(currentPage - 1)
     }
   }
-
 
   const handleSelect = (key: number) => {
     setSelectedKey(key === selectedKey ? null : key);
