@@ -69,12 +69,12 @@
       align-items: center;
       padding-left: 30px;
       cursor: pointer;
-      transition: all .5s ease;
-
 
       &:hover {
-        background-color: #1e8fff2a;
-        border: 1px solid #1E90FF;
+        background-color: #1E90FF;
+        border-bottom: 1px solid #fff;
+        border-top: 1px solid #fff;
+        color: #fff;
       }
 
       & .icon {
@@ -90,8 +90,8 @@
     }
 
     & .current {
-      background-color: #1e8fff2a;
-      border: 1px solid #1E90FF;
+      background-color: #1e8fff;
+      color: #FFF;
     }
   }
 

@@ -1,10 +1,10 @@
 import style from './User.module.css';
 import Logo from '../../assets/Logo.svg';
 import { AiOutlineDown } from "react-icons/ai";
-import { CiHome } from "react-icons/ci";
 import { useState } from 'react';
 import { CiSquareRemove } from "react-icons/ci";
 import { CiSaveDown2 } from "react-icons/ci";
+import { MenuUser } from '../../components/MenuUser';
 
 export const User = () => {
 
@@ -35,10 +35,7 @@ export const User = () => {
       </div>
       <div className={style.upDown}>
         <div className={style.left}>
-          <div className={`${style.menu} ${style.current}`}>
-            <CiHome className={style.icon} />
-            <h1>Inicio</h1>
-          </div>
+          <MenuUser />
         </div>
         {!modal &&
           <div className={style.right}>
