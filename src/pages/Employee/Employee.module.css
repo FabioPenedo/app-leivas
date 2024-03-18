@@ -17,11 +17,6 @@
       margin: 0;
       font-weight: 400;
       font-size: 20px;
-      cursor: pointer;
-
-      &:hover {
-        color: #1E90FF;
-      }
     }
 
     & p {
@@ -95,15 +90,36 @@
       justify-content: space-between;
       margin: 15px 30px;
 
-      & .rightIcons {
+      & .rightButtons {
         display: flex;
-        justify-content: space-around;
-        width: 15%;
 
-        & .icon {
+        & .buttonDownload {
+          margin: 20px;
+          color: #000;
+          padding: 10px 20px;
+          background-color: #fff;
+          border: 1px solid #000;
+          border-radius: 5px;
           cursor: pointer;
-          width: 35px;
-          height: 35px;
+          transition: all .5s ease;
+        }
+
+        & .buttonImport {
+          margin: 20px;
+          color: #fff;
+          padding: 10px 20px;
+          background-color: #1E90FF;
+          border: 0;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: all .5s ease;
+        }
+
+        & .buttonImport:hover {
+          background-color: #1e8fffce;
+        }
+        & .buttonDownload:hover {
+          background-color: #eeeeee;
         }
       }
 
@@ -128,7 +144,8 @@
         border-radius: 50px;
         border: 1px solid rgba(0, 0, 0, 0.377);
       }
-      & input[type="search"]::placeholder{
+
+      & input[type="search"]::placeholder {
         color: rgba(0, 0, 0, 0.377);
         text-align: center;
       }
@@ -146,13 +163,14 @@
         align-items: center;
         justify-content: space-around;
         cursor: pointer;
-        
+
 
         & p {
           font-weight: 400;
           font-size: 20px;
         }
       }
+
       & .upSideInfo:hover {
         background-color: #1e8fff;
         border-bottom: 1px solid #fff;
@@ -190,6 +208,64 @@
         & button:hover {
           background-color: #1e8fffce;
         }
+      }
+    }
+
+    & .editMenu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+
+      & .box {
+        width: 540px;
+        height: 565px;
+        background-color: #1E90FF;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 5px;
+      }
+
+      & form {
+        display: flex;
+        justify-content: center;
+      }
+
+      & .input {
+        height: 65px;
+        width: 310px;
+        font-size: 24px;
+        border: 1px solid #fff;
+        margin-bottom: 20px;
+        padding-left: 15px;
+        font-weight: 400;
+        outline: none;
+        color: #fff;
+        background-color: transparent;
+        border-radius: 5px;
+      }
+
+      & .inputSubmit {
+        padding: 0;
+        height: 64px;
+        font-weight: bold;
+        font-size: 24px;
+        color: #1E90FF;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 0;
+        cursor: pointer;
+        transition: all .3s ease;
+      }
+
+      &.inputSubmit:hover {
+        background-color: #ffffffb9;
+      }
+
+      & input::placeholder {
+        color: #ffffffb6;
       }
     }
   }

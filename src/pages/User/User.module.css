@@ -33,11 +33,6 @@
       margin: 0;
       font-weight: 400;
       font-size: 20px;
-      cursor: pointer;
-
-      &:hover {
-        color: #1E90FF;
-      }
     }
 
     & p {
@@ -146,13 +141,18 @@
         margin: 50px;
 
         & .month {
-
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: 100px;
+          width: 100%;
+          
           & .nameMonth {
             display: flex;
             justify-content: center;
             align-items: center;
             border-bottom: 1px solid #0000007e;
             padding: 15px;
+
 
             & h2 {
               font-weight: 400;
@@ -241,6 +241,64 @@
         font-size: 18px;
         letter-spacing: 0.7px;
         cursor: pointer;
+      }
+    }
+
+    & .editMenu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+
+      & .box {
+        width: 540px;
+        height: 565px;
+        background-color: #1E90FF;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 5px;
+      }
+
+      & form {
+        display: flex;
+        justify-content: center;
+      }
+
+      & .input {
+        height: 65px;
+        width: 310px;
+        font-size: 24px;
+        border: 1px solid #fff;
+        margin-bottom: 20px;
+        padding-left: 15px;
+        font-weight: 400;
+        outline: none;
+        color: #fff;
+        background-color: transparent;
+        border-radius: 5px;
+      }
+
+      & .inputSubmit {
+        padding: 0;
+        height: 64px;
+        font-weight: bold;
+        font-size: 24px;
+        color: #1E90FF;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 0;
+        cursor: pointer;
+        transition: all .3s ease;
+      }
+
+      &.inputSubmit:hover {
+        background-color: #ffffffb9;
+      }
+
+      & input::placeholder {
+        color: #ffffffb6;
       }
     }
   }

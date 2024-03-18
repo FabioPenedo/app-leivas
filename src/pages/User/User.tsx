@@ -1,15 +1,15 @@
 import style from './User.module.css';
 import Logo from '../../assets/Logo.svg';
-import { AiOutlineDown } from "react-icons/ai";
 import { useState } from 'react';
 import { CiSquareRemove } from "react-icons/ci";
-import { CiSaveDown2 } from "react-icons/ci";
 import { MenuUser } from '../../components/MenuUser';
+import { MonthModal } from '../../components/MonthModal';
 
 export const User = () => {
 
   const [modal, setModal] = useState(false)
   const [classModal, setClassModal] = useState(style.container);
+  const [changeMenu, setChangeMenu] = useState<number>(0);
 
   const openModal = () => {
     setModal(true);
@@ -29,25 +29,41 @@ export const User = () => {
           <div className={style.user}>
             <h1>Fábio Penedo</h1>
             <p>Usuario</p>
-            <AiOutlineDown />
           </div>
         </div>
       </div>
       <div className={style.upDown}>
         <div className={style.left}>
-          <MenuUser />
+          <MenuUser changeMenu={setChangeMenu} />
         </div>
         {!modal &&
           <div className={style.right}>
-            <div className={style.rightUpside}>
-              <h1>IMPORTE SEU PDF</h1>
-              <input type="file" accept=".pdf" />
-              <p>Seu PDF foi carregado!</p>
-              <button>Enviar</button>
-            </div>
-            <div className={style.rightUpdown}>
-              <button onClick={openModal}>Declaração</button>
-            </div>
+            {changeMenu === 0 &&
+              <>
+                <div className={style.rightUpside}>
+                  <h1>IMPORTE SEU PDF</h1>
+                  <input type="file" accept=".pdf" />
+                  <p>Seu PDF foi carregado!</p>
+                  <button>Enviar</button>
+                </div>
+                <div className={style.rightUpdown}>
+                  <button onClick={openModal}>Declarações</button>
+                </div>
+              </>
+            }
+            {changeMenu === 1 &&
+              <div className={style.editMenu}>
+                <div className={style.box}>
+                  <form action="" method='post' className={style.form}>
+                    <input type="text" name='name' required placeholder='Nome' className={style.input} />
+                    <input type="email" name='email' required placeholder='Email' className={style.input} />
+                    <input type="text" name='cel' required placeholder='Celular' className={style.input} />
+                    <input type="password" name='password' required placeholder='Senha' className={style.input} />
+                    <input type="submit" value="Atualizar" className={`${style.inputSubmit}`} />
+                  </form>
+                </div>
+              </div>
+            }
           </div>
         }
         {modal &&
@@ -64,56 +80,7 @@ export const User = () => {
               </div>
               <div className={style.modalDatas}>
                 <div className={style.month}>
-                  <div className={style.nameMonth}>
-                    <h2>Janeiro</h2>
-                    <CiSaveDown2 className={style.icon} />
-                  </div>
-                  <div className={style.nameMonth}>
-                    <h2>Fevereiro</h2>
-                    <CiSaveDown2 className={style.icon} />
-                  </div>
-                  <div className={style.nameMonth}>
-                    <h2>Março</h2>
-                    <CiSaveDown2 className={style.icon} />
-                  </div>
-                  <div className={style.nameMonth}>
-                    <h2>Abril</h2>
-                    <CiSaveDown2 className={style.icon} />
-                  </div>
-                  <div className={style.nameMonth}>
-                    <h2>Maio</h2>
-                    <CiSaveDown2 className={style.icon} />
-                  </div>
-                  <div className={style.nameMonth}>
-                    <h2>Junho</h2>
-                    <CiSaveDown2 className={style.icon} />
-                  </div>
-                </div>
-                <div className={style.month}>
-                  <div className={style.nameMonth}>
-                    <h2>Julho</h2>
-                    <CiSaveDown2 className={style.icon} />
-                  </div>
-                  <div className={style.nameMonth}>
-                    <h2>Agosto</h2>
-                    <CiSaveDown2 className={style.icon} />
-                  </div>
-                  <div className={style.nameMonth}>
-                    <h2>Setembro</h2>
-                    <CiSaveDown2 className={style.icon} />
-                  </div>
-                  <div className={style.nameMonth}>
-                    <h2>Outubro</h2>
-                    <CiSaveDown2 className={style.icon} />
-                  </div>
-                  <div className={style.nameMonth}>
-                    <h2>Novembro</h2>
-                    <CiSaveDown2 className={style.icon} />
-                  </div>
-                  <div className={style.nameMonth}>
-                    <h2>Dezembro</h2>
-                    <CiSaveDown2 className={style.icon} />
-                  </div>
+                  <MonthModal />
                 </div>
               </div>
             </div>
